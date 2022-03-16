@@ -2,10 +2,12 @@ const table = document.querySelector('[data-js="form-table"]')
 const columnsElem = document.querySelector('[data-js="columns"]')
 const rowsElem = document.querySelector('[data-js="rows"]')
 const buttonElem = document.querySelector('[data-js="render-table"]')
+const colorElem = document.querySelector('[data-js="table-header-colors"]')
 
 const log = (...values) => console.log(...values)
 
 let tableContent = ''
+let color = ''
 
 const renderColumns = e => {
   tableContent = ''
@@ -40,13 +42,23 @@ const renderRows = e => {
 
 }
 
-const renderTable = () => {
+const renderTable = (e) => {
   table.innerHTML = tableContent
+  setHeaderColor(e)
 }
 
-const setColor = () => {
+const setHeaderColor = e => {
+  const tableHeaderColor = e.target.value
+  const tableHeader = document.querySelectorAll('.header')
 
+  Array.from(tableHeader).forEach(header => {
+    header.style.backgroundColor = tableHeaderColor
+  })
+
+  color = tableHeaderColor
 }
+
+colorElem.addEventListener('change', setHeaderColor)
 
 columnsElem.addEventListener('change', renderColumns)
 rowsElem.addEventListener('change', renderRows)
