@@ -1,0 +1,26 @@
+.cell {
+  display: inline-block;
+  font-family: "Courier New", Courier, monospace;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 2;
+  border: solid 1px darkblue;
+}
+
+.header {
+  background: lightblue;
+}
+
+h1 {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+input {
+  width: 40px;
+}
+
+.inputContainer {
+  margin-bottom: 20px;
+}
