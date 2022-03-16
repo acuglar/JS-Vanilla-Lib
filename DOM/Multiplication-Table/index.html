@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Tabuada</title>
+</head>
+<body>
+	<h1>Tabuada</h1>
+	<main>
+
+		<div>
+			<label class="form-number">Columns
+				<input data-js="columns" type="number" name="columns" min="0" max="20" value="0"></br>
+			</label>
+			<label class="form-number">Rows
+				<input data-js="rows" type="number" name="rows" min="0" max="20" value="0"></br>
+			</label>
+			<button data-js="render-table" >Render</button>
+			
+			<label class="form-color">Color
+				<input data-js="colors" type="color" name="color" id=""></br>
+			</label>
+		</div>
+
+		<div data-js="form-table" class="form-table"></div>
+	
+	</main>
+	<div class="multiplication-table"></div>
+	<script src="app.js"></script>
+</body>
+</html>
