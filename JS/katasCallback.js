@@ -41,5 +41,18 @@ function factorial(p1) {
 console.assert(factorial(5) === 120, 'A função factorial não está funcionando como esperado')
 
 
-function fibonacci(ficonacciSequence) { }
+function fibonacci(ficonacciSequence) {
+  let fibonacciNum,
+    fibonacciNumA = 0,
+    fibonacciNumB = 1,
+    counter = 3;
+
+  while (counter <= ficonacciSequence) {
+    fibonacciNum = fibonacciNumA + fibonacciNumB;
+    fibonacciNumA = fibonacciNumB;
+    fibonacciNumB = fibonacciNum;
+    counter++;
+  }
+  return fibonacciNum
+}
 console.assert(fibonacci(8) === 13, 'A função fibonacci não está funcionando como esperado')
