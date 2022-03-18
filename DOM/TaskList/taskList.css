@@ -25,6 +25,10 @@ html, body, div, h1, input, ul, li, label, span{
   list-style: none;
   box-sizing: border-box;
 }
+
+span {
+  padding-left: 8px;
+}
   
 body {
   background-color: var(--bg);
@@ -47,7 +51,7 @@ input, button {
     border-radius: 5px;
   }
   #tarefas-app .container ~ .container {
-      margin-top:5px;
+    margin-top:5px;
   }
   #tarefas-app .app-cabecalho {
     font-size: 2.4rem;
@@ -57,6 +61,7 @@ input, button {
     display: flex;
     justify-content: space-between;
     margin: 2rem 0;
+    position: relative;
   }
     #tarefas-app .adicionar-tarefa-container #campo-texto-tarefa {
       font-size: 18px;
@@ -71,16 +76,38 @@ input, button {
         padding: 0 1rem;
         margin-left: 10px;
       }
-    #tarefas-app ul {}
+      #tarefas-app .marcar-deletar-tarefas { }
+        #tarefas-app .marcar-deletar-tarefas button {
+          color: inherit;
+          font-size: 15px;
+          cursor: pointer;
+          background: transparent;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(255, 255, 255);
+          border-image: initial;
+          padding: 5px 0.5rem;
+        }
+    #tarefas-app ul {
+      margin: 0 0 40px;
+    }
       #tarefas-app ul li {
         display: flex;
         align-items: center;
         justify-content: unsafe;
         background-color: var(--primary-light);
         padding: 1.5rem 2.5rem;
-        margin: .4rem -2.5rem;
+        margin: 0.4rem -2.5rem;
         position: relative;
+        transition: ease-in-out 0.2;
+        -webkit-transition: ease-in-out 0.2;
+        -moz-transition: ease-in-out 0.2;
+        -ms-transition: ease-in-out 0.2;
+        -o-transition: ease-in-out 0.2;
       }
+        #tarefas-app ul li.fadeIn {
+          opacity: 1;
+        }
         #tarefas-app ul li label {}
           #tarefas-app ul li label .check-tarefa:checked ~ span {
             text-decoration: line-through;
