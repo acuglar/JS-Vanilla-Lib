@@ -63,3 +63,36 @@ body {
   text-align: center;
   margin-bottom: 10px;
 }
+
+table {
+  margin: 0 auto;
+  min-width: 388px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
+tbody tr:nth-child(1) {
+  background-color:#9BBAD780;
+}
+
+tbody tr:nth-child(2) {
+  background:#90CCA680;
+}
+
+tbody tr:nth-child(3) {
+  background:#FFE22F80;
+}
+
+tbody tr:nth-child(4) {
+  background:#EBA25380;
+}
+
+tbody tr:nth-child(5) {
+  background:#D5404A80;
+}
+ 
