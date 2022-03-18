@@ -40,3 +40,15 @@ const displaySquared = numbersArray => {
 displaySquared(sampleArray)
 
 // 4. Exibir 20 retângulos cinza sólido, cada um com 20px de altura e larguras determinadas por cada elementos de sampleArray, retângulos de largura par de vermelho.  
+const displaySquares = numbersArray => {
+	const divInner = document.createElement('div')
+	divInner.innerHTML += numbersArray.reduce((acc, item) => {
+		acc += item % 2 === 0
+			? `<div style="width:${item}px; height:20px; background-color:gray;"></div>`
+			: `<div style="width:${item}px; height:20px; background-color:red;"></div>`
+		console.log(acc)
+		return acc
+	}, '')
+	divOuter.appendChild(divInner)
+}
+displaySquares(sampleArray)
