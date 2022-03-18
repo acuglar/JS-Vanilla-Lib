@@ -1,6 +1,8 @@
 const currencyOneEl = document.querySelector('[data-js="currency-one"]')
 const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
 const currenciesEl = document.querySelector('[data-js="currencies-container"]')
+const convertedValueEl = document.querySelector('[data-js="converted-value"]')
+const valuePrecisionEl = document.querySelector('[data-js="conversion-precision"]')
 
 const url = `https://v6.exchangerate-api.com/v6/d4d8f6895cab53f22b3d6a75/latest/USD`
 
@@ -57,6 +59,9 @@ const init = async () => {
 
   currencyOneEl.innerHTML = getOptions('USD')
   currencyTwoEl.innerHTML = getOptions('BRL')
+
+  convertedValueEl.textContent = exchangeRateData.conversion_rates.BRL.toFixed(2)
+  valuePrecisionEl.textContent = `1 USD = ${exchangeRateData.conversion_rates.BRL} BRL`
 }
 
 init() 
