@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMC</title>
+</head>
+<body>
+  <form name="bmi">
+    <div class="bmi-calculator">
+      <h1>Calcule seu IMC</h1>
+      <div class="bmi-weight">
+        <input data-js="weight" type="range">
+        <label>Peso:<input type="text"> Kg</label>
+      </div>
+      <div class="bmi-height">
+        <input data-js="height" type="range">
+        <label>Altura:<input type="text"> cm</label>
+      </div>
+    </div>
+    <div>
+      <input data-js="btnCalcular" class="btnCalcular" type="button" value="Calcular">
+      <p> --</p>
+    </div>
+  </form>
+  <script src="app.js"></script>
+</body>
+</html>
