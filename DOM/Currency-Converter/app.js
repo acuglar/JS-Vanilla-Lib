@@ -2,7 +2,7 @@ const currencyOneEl = document.querySelector('[data-js="currency-one"]')
 const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
 const currenciesEl = document.querySelector('[data-js="currencies-container"]')
 
-const url = `https://v6.exchangerate-api.com/v6/d4d8f6895cab53f22b3d6a75/latest/UUSD`
+const url = `https://v6.exchangerate-api.com/v6/d4d8f6895cab53f22b3d6a75/latest/USD`
 
 const getErrorMessage = errorType => ({
   "unsupported-code": 'A moeda não existe em nosso banco de dados.',
@@ -23,6 +23,7 @@ const fetchExchangeRate = async () => {
     if (exchangeRateData.result === 'error') {
       throw new Error(getErrorMessage(exchangeRateData['error-Type']))
     }
+    return exchangeRateData
 
   } catch (err) {
     const div = document.createElement('div')
@@ -33,7 +34,7 @@ const fetchExchangeRate = async () => {
     div.setAttribute('role', 'alert')
     button.classList.add('btn-close')
     button.setAttribute('type', 'button')
-    button.setAttribute('Attribute', 'Close')
+    button.setAttribute('aria-label', 'Close')
 
     button.addEventListener('click', () => {
       div.remove()
@@ -45,3 +46,17 @@ const fetchExchangeRate = async () => {
 }
 
 fetchExchangeRate()
+
+const init = async () => {
+  const exchangeRateData = await fetchExchangeRate();
+
+  const getOptions = selectedCurrency => Object.keys(exchangeRateData.conversion_rates)
+    .map(currency => `<option ${currency === selectedCurrency ? 'selected' : ''}>${currency}</option>`)
+    .join('')
+  console.log(getOptions);
+
+  currencyOneEl.innerHTML = getOptions('USD')
+  currencyTwoEl.innerHTML = getOptions('BRL')
+}
+
+init() 
