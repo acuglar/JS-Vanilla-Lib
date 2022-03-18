@@ -79,13 +79,33 @@ input, button {
         background-color: var(--primary-light);
         padding: 1.5rem 2.5rem;
         margin: .4rem -2.5rem;
+        position: relative;
       }
         #tarefas-app ul li label {}
-          #tarefas-app ul li label #check-tarefa {}
+          #tarefas-app ul li label .check-tarefa:checked ~ span {
+            text-decoration: line-through;
+            opacity: 0.5;
+          }
+          #tarefas-app ul li label .check-tarefa:checked{
+            opacity: 0.5;
+          }
           #tarefas-app ul li label #titulo-tarefa {
             font-size: 20px;
             margin-left: .3rem;
           }
+          #tarefas-app ul li small{
+           display: block;
+           width: 20px;
+           height: 22px;
+           opacity: 0.5;
+           position:absolute;
+           right: 2.5rem;
+           background-position: center;
+           cursor: pointer;
+          }
+          #tarefas-app ul li small:hover{
+            opacity: 1;
+           }
       #tarefas-app ul li.completed {
         font-style: italic;
         text-decoration: line-through;
