@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Oswald');
+
+body {
+	font-family: Oswald; 
+	font-size: 14px;
+}
+
+nav {
+	font-family: sans-serif; 
+	font-size: 10px;
+}
+
+#main {
+	width: 900px; 
+	margin: 10px auto;
+}
+
+h1 {
+	font-family: Bungee Inline; 
+	font-size: 46px;
+	font-weight: lighter;
+}
+
+#menu {
+	columns: 420px 2; column-gap: 60px;
+}
+
+section {
+	margin-bottom: 20px; padding: 10px;
+}
+
+h2 {
+	margin-top: 0; 
+	text-transform: uppercase;
+}
+
+dt {
+	display: inline; 
+	font-weight: bold; 
+	font-size: 16px;
+}
+
+dt::after {
+	content: ",";}
+
+dd {
+	display: inline; 
+	margin: 0;
+}
+
+	dd::after {
+	content: " "; 
+	display: block; 
+	clear: both; 
+	margin-bottom: 15px;
+}
+
+.price {
+	float: right; padding: 0 0 35px 20px;
+}
+
+address {
+	text-align: right;
+}
+
+#starters {
+	border: 2px solid black;
+}
+
+#desserts {
+	border: 2px solid black
+}
