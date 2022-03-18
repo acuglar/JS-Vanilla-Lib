@@ -5,23 +5,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMC</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <form name="bmi">
     <div class="bmi-calculator">
       <h1>Calcule seu IMC</h1>
-      <div class="bmi-weight">
-        <input data-js="weight" type="range">
-        <label>Peso:<input type="text"> Kg</label>
+      <div class="bmi-calculator-weight">
+        <input id="sliderWeight" class="weight-slider" type="range" min="25" max="180" value="70"/>
+        <p>Peso:
+          <input id="weightOutput" class="inputNumber" type="number" value="70" min="25" max="180"/>
+         <span>Kg</span>
+        </p>
       </div>
-      <div class="bmi-height">
-        <input data-js="height" type="range">
-        <label>Altura:<input type="text"> cm</label>
+      <div class="bmi-calculator-height">
+        <input id="sliderHeight" class="height-slider" type="range" min="90" max="200" value="170"/>
+        <p>Altura:
+          <input id="heightOutput" class="inputNumber" type="number" value="170" min="90" max="200"/>
+          <span>cm</span>
+        </p>
       </div>
-    </div>
-    <div>
-      <input data-js="btnCalcular" class="btnCalcular" type="button" value="Calcular">
-      <p> --</p>
+      <input class="button" type="button" id="btnCalcular" value="Calcular"/>
+      <div id="resultado">
+        <p> --</p>
+      </div>
     </div>
   </form>
   <script src="app.js"></script>
