@@ -73,4 +73,11 @@ timesCurrencyOneEl.addEventListener('input', e => {
   convertedValueEl.textContent = (e.target.value * internalExchangeRate.conversion_rates[currencyTwoEl.value]).toFixed(2)
 })
 
-init() 
+init()
+
+currencyTwoEl.addEventListener('input', e => {
+  const currencyTwoValue = internalExchangeRate.conversion_rates[e.target.value]
+
+  convertedValueEl.textContent = (timesCurrencyOneEl.value * currencyTwoValue).toFixed(2)
+  valuePrecisionEl.textContent = `1 USD = ${internalExchangeRate.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
+})
