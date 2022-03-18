@@ -8,32 +8,81 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form name="bmi">
-    <div class="bmi-calculator">
-      <h1>Calcule seu IMC</h1>
-      <div class="bmi-calculator-weight">
-        <input id="sliderWeight" class="weight-slider" type="range" min="25" max="180" value="70"/>
-        <p>Peso:
-          <input id="weightOutput" class="inputNumber" type="number" value="70" min="25" max="180"/>
-         <span>kg</span>
-        </p>
+  <main>
+    
+    <form name="bmi">
+      <div class="bmi-calculator">
+        <h1>Calcule seu IMC</h1>
+        
+        <div class="bmi-calculator-weight">
+          <input id="sliderWeight" class="weight-slider" type="range" min="25" max="180" value="70"/>
+          <p>Peso:
+            <input id="weightOutput" class="inputNumber" type="number" value="70" min="25" max="180"/>
+           <span>kg</span>
+          </p>
+        </div>
+       
+        <div class="bmi-calculator-height">
+          <input id="sliderHeight" class="height-slider" type="range" min="90" max="200" value="170"/>
+          <p>Altura:
+            <input id="heightOutput" class="inputNumber" type="number" value="170" min="90" max="200"/>
+            <span>cm</span>
+          </p>
+        </div>
+       
+        <input class="button" type="button" id="btnCalcular" value="Calcular"/>
+       
+        <div id="resultado">
+          <p>--</p>
+        </div>
+        <div class="alert">
+          <p></p>
+        </div>
+  
       </div>
-      <div class="bmi-calculator-height">
-        <input id="sliderHeight" class="height-slider" type="range" min="90" max="200" value="170"/>
-        <p>Altura:
-          <input id="heightOutput" class="inputNumber" type="number" value="170" min="90" max="200"/>
-          <span>cm</span>
-        </p>
-      </div>
-      <input class="button" type="button" id="btnCalcular" value="Calcular"/>
-      <div id="resultado">
-        <p>--</p>
-      </div>
-      <div id="alert" hidden>
-        <p></p>
-      </div>
-    </div>
-  </form>
+    </form>
+  
+    <table class="hidden">
+      <thead>
+        <th>Classificação</th>
+        <th>Mulher</th>
+        <th>Homem</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Abaixo do peso</td>
+          <td>&lt; 19</td>
+          <td>&lt; 20</td>
+        </tr>
+        <tr>          
+          <td>Normal</td>
+          <td>19 - 23,9</td>
+          <td>20 - 24,9</td>
+        </tr>
+        <tr>
+          <td>Obesidade I</td>
+          <td>24 - 28,9</td>
+          <td>25 - 29,9</td>
+        </tr>
+        <tr>
+          <td>Obesidade II</td>
+          <td>29 - 38,9</td>
+          <td>30 - 39,9</td>
+        </tr>
+        <tr>
+          <td>Obesidade III</td>
+          <td>&gt; 39</td>
+          <td>&gt; 40</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">Fonte: OMS - Organização Mundial da Saúde</td>
+        </tr>
+      <tfoot>
+    </table>
+  </main>
+
   <script src="app.js"></script>
 </body>
 </html>
